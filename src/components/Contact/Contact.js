@@ -81,16 +81,16 @@ const Contact = () => {
             { 
               icon: 'fas fa-envelope', 
               title: 'Email', 
-              content: 'shimanto7710@gmail.com',
+              content: 'shimanto925pabna@gmail.com',
               delay: '0.2s',
-              link: 'mailto:shimanto7710@gmail.com'
+              link: 'mailto:shimanto925pabna@gmail.com'
             },
             { 
               icon: 'fas fa-phone', 
               title: 'Phone', 
-              content: '+880 1234 567890',
+              content: '+880 1750658101',
               delay: '0.4s',
-              link: 'tel:+8801234567890'
+              link: 'tel:+8801750658101'
             },
             { 
               icon: 'fas fa-map-marker-alt', 
@@ -99,7 +99,8 @@ const Contact = () => {
               delay: '0.6s',
               link: 'https://goo.gl/maps/Dhaka'
             }
-          ].map((item, index) => (
+          ]
+            .map((item, index) => (
             <div 
               className="contact-card contact-animate fade-right" 
               key={index}
@@ -214,7 +215,7 @@ const Contact = () => {
         </form>
       </div>
       
-      <div className="map-container contact-animate fade-up">
+      {/* <div className="map-container contact-animate fade-up">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.3870399631!2d90.2792364709319!3d23.780863189539755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus" 
           width="100%" 
@@ -225,7 +226,7 @@ const Contact = () => {
           referrerPolicy="no-referrer-when-downgrade"
           title="Dhaka Map"
         ></iframe>
-      </div>
+      </div> */}
     </section>
   );
 };

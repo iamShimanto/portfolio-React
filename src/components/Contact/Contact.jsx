@@ -40,7 +40,7 @@ const Contact = () => {
                     <div className="contact-card">
                         <i className="fas fa-envelope"></i>
                         <h3>Email</h3>
-                        <p>shimanto7710@gmail.com</p>
+                        <p>shimanto925pabna@gmail.com</p>
                     </div>
 
                     <div className="contact-card">

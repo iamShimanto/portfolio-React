@@ -15,7 +15,7 @@ const About = () => {
   // Create a fallback for the about image
   const handleImageError = (e) => {
     e.target.onerror = null;
-    e.target.src = 'https://via.placeholder.com/500x500?text=About+Image';
+    e.target.src = 'https://portfolio-shimanto.vercel.app/images/main.png';
   };
 
   // Intersection Observer for scroll animations
