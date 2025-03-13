@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #0ef;
+  --secondary-color: #1f242d;
+  --background-color: #081b29;
+  --text-color: #fff;
+  --hover-color: #0ef;
+  --animation-timing: 0.5s;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background: var(--primary-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--primary-color);
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  letter-spacing: .1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .5s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn:hover {
+  box-shadow: none;
+}
+
+/* Button hover effect with ripple */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+/* Animation classes */
+.animate-fadeIn {
+  animation: fadeIn var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-zoomIn {
+  animation: zoomIn var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-flip {
+  animation: flip 1s ease forwards;
+  transform-style: preserve-3d;
+}
+
+.animate-rotateIn {
+  animation: rotateIn var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-slideUp {
+  animation: slideTop var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-slideDown {
+  animation: slideBottom var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-slideLeft {
+  animation: slideLeft var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+.animate-slideRight {
+  animation: slideRight var(--animation-timing) ease forwards;
+  opacity: 0;
+}
+
+/* Enhanced Animation keyframes */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color) }
+}
+
+/* Glowing effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  section {
+    padding: 10rem 3% 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 45%;
+  }
+} 

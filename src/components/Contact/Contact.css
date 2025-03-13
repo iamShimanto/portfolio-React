@@ -1,0 +1,346 @@
+.contact {
+  background: var(--background-color);
+  position: relative;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-card {
+  background: var(--secondary-color);
+  padding: 2.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 238, 255, 0.1),
+    transparent,
+    rgba(0, 238, 255, 0.1)
+  );
+  transform: rotate(45deg);
+  z-index: -1;
+  transition: transform 0.8s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 238, 255, 0.2);
+}
+
+.contact-card:hover::before {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.icon-wrapper {
+  width: 6rem;
+  height: 6rem;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 1rem rgba(0, 238, 255, 0.5);
+}
+
+.contact-card i {
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+.contact-card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.contact-card p {
+  font-size: 1.6rem;
+}
+
+.contact-card p a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-card p a:hover {
+  color: var(--primary-color);
+}
+
+.social-links {
+  background: var(--secondary-color);
+  padding: 2.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.social-links h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: rgba(0, 238, 255, 0.1);
+  border-radius: 50%;
+  color: var(--primary-color);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 238, 255, 0.3);
+}
+
+.social-icons a:hover::before {
+  transform: scale(1);
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--secondary-color);
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.form-header {
+  margin-bottom: 1rem;
+}
+
+.form-header h3 {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.input-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.input-box {
+  width: 100%;
+}
+
+.input-box label {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.8rem;
+  border: 1px solid transparent;
+  outline: none;
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0.5rem var(--primary-color);
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 18rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: width 0.5s ease;
+  z-index: -1;
+}
+
+.submit-btn:hover::after {
+  width: 100%;
+}
+
+.submit-btn.submitting {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  cursor: not-allowed;
+}
+
+.submit-btn.success {
+  background: #28a745;
+  color: white;
+}
+
+.spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid rgba(0, 238, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.map-container {
+  margin-top: 5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll animations */
+.contact-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contact-animate.show-animation {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up {
+  transform: translateY(30px);
+}
+
+.fade-down {
+  transform: translateY(-30px);
+}
+
+.fade-left {
+  transform: translateX(-30px);
+}
+
+.fade-right {
+  transform: translateX(30px);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .input-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons {
+    flex-wrap: wrap;
+  }
+} 

@@ -1,0 +1,233 @@
+.skills {
+  background: var(--background-color);
+  position: relative;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.skills-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.skills-content h3 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.skills-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 0.2rem;
+  background: var(--primary-color);
+  transition: width 0.8s ease;
+}
+
+.skills-content:hover h3::after {
+  width: 100%;
+}
+
+.skills-content p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.skills-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background: var(--secondary-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 238, 255, 0.2);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.skill-card h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.skills-bars {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.skill-box {
+  margin-bottom: 2.5rem;
+}
+
+.skill-name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.skill-bar {
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-per {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary-color), #00b3ff);
+  border-radius: 1rem;
+  position: relative;
+  transition: width 1.5s cubic-bezier(0.1, 0.42, 0.85, 1);
+  width: 0;
+}
+
+.skill-per.animate {
+  animation: glowBar 2.5s infinite alternate;
+}
+
+.skill-per::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.5rem;
+  height: 100%;
+  background: var(--background-color);
+}
+
+.tooltip {
+  position: absolute;
+  right: -1.5rem;
+  top: -3rem;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.skill-per:hover .tooltip {
+  opacity: 1;
+}
+
+.experience-counter {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.counter-item {
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.counter-item:hover {
+  transform: translateY(-10px);
+}
+
+.counter-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.counter-item p {
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+@keyframes glowBar {
+  0% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--primary-color);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-content {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .skills-content h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .skills-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-card-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .experience-counter {
+    flex-direction: column;
+    gap: 2rem;
+  }
+} 
