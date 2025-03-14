@@ -50,13 +50,15 @@
 }
 
 .home-img {
-  width: 35vw;
+  /* width: 35vw; */
   position: relative;
+  /* width: 450px; */
+  /* height: 450px; */
 }
 
 .home-img img {
-  width: 100%;
-  max-width: 450px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
   box-shadow: 0 0 2rem var(--primary-color);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -169,8 +171,9 @@
   }
 }
 
-@media (max-width: 768px) {
-  .home-img {
-    width: 90vw;
+@media (max-width: 575.98px) {
+  .home-img img{
+    width: 300px;
+    height: 300px;
   }
 } 
