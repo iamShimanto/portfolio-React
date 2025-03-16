@@ -12,6 +12,11 @@
   --text-color: #fff;
   --hover-color: #0ef;
   --animation-timing: 0.5s;
+  
+  /* New variables for our animations */
+  --main-color: #0ef;
+  --second-bg-color: #1f242d;
+  --bg-color: #081b29;
 }
 
 html {
