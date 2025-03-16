@@ -500,7 +500,7 @@ const Home = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      {/* <motion.div 
         className="scroll-indicator"
         animate={{ 
           y: [0, 10, 0],
@@ -528,7 +528,7 @@ const Home = () => {
             <i className="fas fa-angle-down"></i>
           </motion.div>
         </a>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
